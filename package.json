@@ -1,0 +1,27 @@
+{
+  "name": "node-discount",
+  "version": "0.0.1",
+  "description": "Node.js bindings for the \"Discount\" markdown library",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "cd deps/discount; ./configure.sh; make install",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdax/node-discount.git"
+  },
+  "keywords": [
+    "discount",
+    "markdown",
+    "md",
+    "native"
+  ],
+  "author": "Chitharanjan Das <das.chitharanjan@gmail.com>",
+  "license": "MIT",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/cdax/node-discount/issues"
+  },
+  "homepage": "https://github.com/cdax/node-discount#readme"
+}
