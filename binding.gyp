@@ -5,6 +5,12 @@
             'dependencies': [ 'libmarkdown' ],
             'sources': [
                 'src/discount.cc'
+            ],
+            'include_dirs': [
+                'deps/discount'
+            ],
+            'libraries': [
+                'deps/discount/libmarkdown.a'
             ]
         },
         {
@@ -117,7 +123,7 @@
                     ],
                     'action': [
                         'eval',
-                        'cd deps/discount && ./configure.sh && make'
+                        'cd deps/discount && ./configure.sh && make libmarkdown'
                     ],
                     'message': 'Building libmarkdown...'
                 }

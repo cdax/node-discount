@@ -4,7 +4,7 @@ TOOLSET := target
 TARGET := libmarkdown
 ### Rules for action "build_libmarkdown":
 quiet_cmd_binding_gyp_libmarkdown_target_build_libmarkdown = ACTION Building libmarkdown... $@
-cmd_binding_gyp_libmarkdown_target_build_libmarkdown = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p deps/discount; eval "cd deps/discount && ./configure.sh && make"
+cmd_binding_gyp_libmarkdown_target_build_libmarkdown = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p deps/discount; eval "cd deps/discount && ./configure.sh && make libmarkdown"
 
 deps/discount/libmarkdown.a: obj := $(abs_obj)
 deps/discount/libmarkdown.a: builddir := $(abs_builddir)

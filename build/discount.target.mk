@@ -44,7 +44,8 @@ INCS_Debug := \
 	-I/Users/cdas/.node-gyp/4.0.0/include/node \
 	-I/Users/cdas/.node-gyp/4.0.0/src \
 	-I/Users/cdas/.node-gyp/4.0.0/deps/uv/include \
-	-I/Users/cdas/.node-gyp/4.0.0/deps/v8/include
+	-I/Users/cdas/.node-gyp/4.0.0/deps/v8/include \
+	-I$(srcdir)/deps/discount
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=discount' \
@@ -86,7 +87,8 @@ INCS_Release := \
 	-I/Users/cdas/.node-gyp/4.0.0/include/node \
 	-I/Users/cdas/.node-gyp/4.0.0/src \
 	-I/Users/cdas/.node-gyp/4.0.0/deps/uv/include \
-	-I/Users/cdas/.node-gyp/4.0.0/deps/v8/include
+	-I/Users/cdas/.node-gyp/4.0.0/deps/v8/include \
+	-I$(srcdir)/deps/discount
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/discount.o
@@ -142,7 +144,8 @@ LIBTOOLFLAGS_Release := \
 	-undefined dynamic_lookup \
 	-Wl,-search_paths_first
 
-LIBS :=
+LIBS := \
+	deps/discount/libmarkdown.a
 
 $(builddir)/discount.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
 $(builddir)/discount.node: LIBS := $(LIBS)
